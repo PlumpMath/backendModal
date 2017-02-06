@@ -59,11 +59,11 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="logo-element">精讯
+                    <div class="logo-element">长青
                     </div>
                 </li>
                 <li>
-                    <a class="J_menuItem" href="content/index/default" data-index="0">
+                    <a class="J_menuItem" href="webPage/indexContent/default.html" data-index="0" data-id="webPage/indexContent/default.html">
                         <i class="fa fa-lg fa-home fa-fw"></i><span class="nav-label">首页</span>
                     </a>
                 </li>
@@ -161,6 +161,13 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="webPage/plugin/progress.html" target="_blank">
+                        <i class="fa fa-lg fa-cog fa-fw"></i>
+                        <span class="nav-label">脱离文档</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                </li>
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
                     <i class="fa fa-exchange"></i>
                 </a>
@@ -173,12 +180,11 @@
         <div class="row border-bottom">
             <!--<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">-->
             <nav class="navbar navbar-fixed-top" role="navigation" style="margin-bottom: 0">
-
                 <div class="navbar-header">
                     <a id="title" href="#">
                         <img src="${basePath}/resources/images/common/logoSmall.png" width=100 height=25 alt="logo"
                              style="float: left">
-                        <span class="font_header">智慧建筑生态空间云平台</span>
+                        <span class="font_header">管理系统前台框架-插件集成-谢长青</span>
                     </a>
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
@@ -195,7 +201,7 @@
             </button>
             <nav class="page-tabs J_menuTabs">
                 <div class="page-tabs-content">
-                    <a href="javascript:;" class="active J_menuTab" data-id="content/index/default">首页</a>
+                    <a href="webPage/indexContent/default.html" class="active J_menuTab" data-id="webPage/indexContent/default.html" data-index="0">首页</a>
                 </div>
             </nav>
             <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
@@ -221,9 +227,9 @@
                     data-id="content/index/default" seamless></iframe>
         </div>
         <div class="footer">
-            <div style="text-align: center">&copy; 2014-2019
-                <a href="login">
-                    成都云智无忧科技有限公司
+            <div style="text-align: center">&copy;
+                <a href="#">
+                    管理系统前台框架-插件集成-谢长青
                 </a>
             </div>
         </div>
@@ -285,5 +291,9 @@
 <script src="js/jquery/jquery.metisMenu.js"></script>
 <!--响应式-->
 <script src="js/jquery/jquery.slimscroll.min.js"></script>
+<!--默认iframe内容初始化-->
+<script>
+    $("#center").attr("src","webPage/indexContent/default.html");
+</script>
 </body>
 </html>
