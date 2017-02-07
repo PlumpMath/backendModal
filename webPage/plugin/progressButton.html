@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>progress</title>
+    <!--bootstrap样式-->
+    <link rel="stylesheet" href="../../plugin/bootstrap/css/bootstrap.min.css">
+    <!--animate-->
+    <link rel="stylesheet" href="../../css/common/animate.css">
+    <!--common style-->
+    <link rel="stylesheet" href="../../css/common/style.css">
+    <!--font-awesome-->
+    <link rel="stylesheet" href="../../plugin/fontAwesome/css/font-awesome.min.css">
+    <!--jQuery-->
+    <script src="../../js/jquery/jquery-2.0.2.min.js"></script>
+    <!--3.1的版本不支持contab-->
+    <!--<script src="js/jquery/jquery-3.1.1.js"></script>-->
+    <!--bootstrap js-->
+    <script src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        /*内容居中一下*/
+        .float-e-margins{
+            padding:0 10%
+        }
+        /*按钮在style中的样式float:right,排版调整*/
+        .btn{
+            float:none
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+    <div class="col-sm-10">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>进度条 (Progress Bars)</h5>
+            </div>
+            <div class="ibox-content">
+                <h5>基本</h5>
+                <div class="progress">
+                    <div style="width: 35%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="35" role="progressbar" class="progress-bar progress-bar-success">
+                        <span class="sr-only">35% Complete (success)</span>
+                    </div>
+                </div>
+
+                <div class="progress progress-bar-default">
+                    <div style="width: 43%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="43" role="progressbar" class="progress-bar">
+                        <span class="sr-only">43% Complete (success)</span>
+                    </div>
+                </div>
+
+                <h5>条纹</h5>
+
+                <div class="progress progress-striped">
+                    <div style="width: 50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" role="progressbar" class="progress-bar progress-bar-warning">
+                        <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                </div>
+
+                <h5>动画</h5>
+                <div class="progress progress-striped active">
+                    <div style="width: 75%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-info">
+                        <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                </div>
+
+                <h5>堆叠</h5>
+
+                <div class="progress progress-striped active">
+                    <div style="width: 30%" class="progress-bar progress-bar-success">
+                        <span class="sr-only">30% Complete (success)</span>
+                    </div>
+                    <div style="width: 20%" class="progress-bar progress-bar-warning">
+                        <span class="sr-only">15% Complete (warning)</span>
+                    </div>
+                    <div style="width: 40%" class="progress-bar progress-bar-danger">
+                        <span class="sr-only">40% Complete (danger)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ibox-title">
+                <h5>按钮(button)</h5>
+            </div>
+            <div class="ibox-content well">
+                <button class="btn btn-primary">按钮</button>
+                <button class="btn btn-info">按钮</button>
+                <button class="btn btn-warning">按钮</button>
+                <button class="btn btn-danger">按钮</button>
+                <button class="btn btn-default">按钮</button>
+                <button class="btn btn-white">按钮</button>
+                <button class="btn btn-circle">按钮</button>
+                <button class="btn btn-circle btn-danger"><i class="fa fa-close"></i></button>
+                <button class="btn btn-circle btn-primary"><i class="fa fa-check"></i></button>
+                <button class="btn btn-block">按钮</button>
+            </div>
+            <div class="ibox-title">
+                <h5>标签(tag)</h5>
+            </div>
+            <div class="ibox-content well">
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

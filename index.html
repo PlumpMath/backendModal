@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!--360浏览器内核-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <title>backendModal</title>
+    <title>后台管理系统集成</title>
     <!--bootstrap样式-->
     <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.min.css">
     <!--animate-->
@@ -35,47 +35,38 @@
                             <img width=100% height=100% alt="image" src="image/common/cat.jpg"/>
                         </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-									<span class="clear">
-                               <span class="block m-t-xs"><strong class="font-bold">${user.name}</strong></span>
-									<span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
-									</span>
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Amy Shieh</strong>
+                            </span>
+                            <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                        </span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li>
-                                <a class="J_menuItem" href="form_avatar.html">修改头像</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="profile.html">个人资料</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="contacts.html">联系我们</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="mailbox.html">信箱</a>
-                            </li>
+                            <li><a class="J_menuItem" href="1">修改头像</a></li>
+                            <li><a class="J_menuItem" href="2">个人资料</a></li>
+                            <li><a class="J_menuItem" href="3">联系我们</a></li>
+                            <li><a class="J_menuItem" href="4">信箱</a></li>
                             <li class="divider"></li>
-                            <li id="logout">
-                                <a href="exit" title="Sign Out">安全退出</a>
-                            </li>
+                            <li><a href="#" title="Sign Out">安全退出</a></li>
                         </ul>
                     </div>
-                    <div class="logo-element">精讯
-                    </div>
+                    <div class="logo-element">Amy Shieh</div>
                 </li>
                 <li>
-                    <a class="J_menuItem" href="content/index/default" data-index="0">
+                    <a class="J_menuItem" href="webPage/indexContent/default.html" data-index="0">
                         <i class="fa fa-lg fa-home fa-fw"></i><span class="nav-label">首页</span>
                     </a>
                 </li>
                 <li>
 
-                    <a href="#"><i class="fa fa-lg fa-cog fa-fw"></i>
-                        <span class="nav-label">插件</span>
+                    <a href="#"><i class="fa fa-lg fa-grav fa-fw"></i>
+                        <span class="nav-label">UI元素</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="webPage/plugin/progress.html">进度条</a>
+                            <a class="J_menuItem" href="webPage/plugin/progressButton.html">进度条/按钮</a>
                         </li>
                         <li>
                             <a class="J_menuItem" href="content/equip/equipHardware">精讯硬件检测</a>
@@ -123,7 +114,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li>
                     <a href="#">
                         <i class="fa fa-lg fa-cubes fa-fw"></i>
@@ -161,6 +151,13 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="webPage/plugin/progressButton.html" target="_blank">
+                        <i class="fa fa-lg fa-cog fa-fw"></i>
+                        <span class="nav-label">脱离文档</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                </li>
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
                     <i class="fa fa-exchange"></i>
                 </a>
@@ -169,16 +166,15 @@
     </nav>
     <!--左侧导航结束-->
     <!--右侧部分开始-->
+    <!--头部title-->
     <div id="page-wrapper" class="gray-bg dashbard-1">
         <div class="row border-bottom">
-            <!--<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">-->
             <nav class="navbar navbar-fixed-top" role="navigation" style="margin-bottom: 0">
-
                 <div class="navbar-header">
                     <a id="title" href="#">
-                        <img src="${basePath}/resources/images/common/logoSmall.png" width=100 height=25 alt="logo"
-                             style="float: left">
-                        <span class="font_header">智慧建筑生态空间云平台</span>
+                        <img src="image/common/girl.png" width=60 height=60 alt="logo"
+                             style="float:left;margin-left:20px;display:none">
+                        <span style="font-size:16px;color:#fff;font-family:'微软雅黑';margin-left:2%;line-height:60px;">管理系统前台框架-插件集成</span>
                     </a>
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
@@ -195,7 +191,7 @@
             </button>
             <nav class="page-tabs J_menuTabs">
                 <div class="page-tabs-content">
-                    <a href="javascript:;" class="active J_menuTab" data-id="content/index/default">首页</a>
+                    <a href="javascript:;" class="active J_menuTab" data-id="webPage/indexContent/default.html">首页</a>
                 </div>
             </nav>
             <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
@@ -218,12 +214,12 @@
 
         <div class="row J_mainContent" id="content-main">
             <iframe id="center" class="J_iframe" name="iframe0" width="100%" height="100%" frameborder="no" border="0"
-                    data-id="content/index/default" seamless></iframe>
+                    data-id="webPage/indexContent/default.html" seamless></iframe>
         </div>
         <div class="footer">
-            <div style="text-align: center">&copy; 2014-2019
-                <a href="login">
-                    成都云智无忧科技有限公司
+            <div style="text-align: center">&copy;
+                <a href="#">
+                    管理系统前台框架-插件集成
                 </a>
             </div>
         </div>
@@ -239,36 +235,22 @@
                     </a>
                 </li>
             </ul>
-
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane active">
                     <div class="sidebar-title">
                         <h3><i class="fa fa-comments-o"></i> 主题设置</h3>
-                        <small><i class="fa fa-tim"></i> 你可以从这里选择和预览主题的布局和样式，这些设置会被保存在本地，下次打开的时候会直接应用这些设置。</small>
+                        <small><i class="fa fa-tim"></i> 你可以从这里选择和预览主题的布局和样式，这些设置(是否保存 本地存储)。</small>
                     </div>
                     <div class="skin-setttings">
                         <div class="title">皮肤选择</div>
                         <div class="setings-item blue-skin nb">
-                            <span class="skin-name ">
-                                <a href="#" class="s-skin-1">
-                                    默认皮肤
-                                </a>
-                            </span>
+                            <span class="skin-name "><a href="#" class="s-skin-1">默认皮肤</a></span>
                         </div>
                         <div class="setings-item default-skin nb">
-                            <span class="skin-name ">
-                                 <a href="#" class="s-skin-0">
-                                     黑色/绿色主题
-                                 </a>
-                            </span>
+                            <span class="skin-name "><a href="#" class="s-skin-0">黑色/绿色主题</a></span>
                         </div>
-
                         <div class="setings-item yellow-skin nb">
-                            <span class="skin-name ">
-                                <a href="#" class="s-skin-3">
-                                    黄色/紫色主题
-                                </a>
-                            </span>
+                            <span class="skin-name "><a href="#" class="s-skin-3">黄色/紫色主题</a></span>
                         </div>
                     </div>
                 </div>
@@ -285,5 +267,9 @@
 <script src="js/jquery/jquery.metisMenu.js"></script>
 <!--响应式-->
 <script src="js/jquery/jquery.slimscroll.min.js"></script>
+<!--默认iframe内容初始化-->
+<script>
+    $("#center").attr("src","webPage/indexContent/default.html");
+</script>
 </body>
 </html>

@@ -7239,7 +7239,8 @@ body.skin-1 {
 }
 
 .fixed-nav.skin-1 .navbar-fixed-top {
-    background: #000;
+    /*background: #000;*/
+    background: #3f91d3;
 }
 
 .skin-1 .wrapper-content {
@@ -7367,7 +7368,9 @@ body.boxed-layout.skin-3 #wrapper {
 }
 
 .fixed-nav.skin-3 .navbar-fixed-top {
-    background: #000;
+    /*background: #000;*/
+    background: #e0a754;
+
 }
 
 .skin-3 .nav > li > a {
