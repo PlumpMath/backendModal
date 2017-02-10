@@ -22,10 +22,6 @@
     <script src="../../plugin/layer/layer.js"></script>
     <!--bootstrap js-->
     <script src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
-    <!-- jqGrid -->
-    <script src="../../plugin/jqgrid/js/grid.locale-cn.js"></script>
-    <script src="../../plugin/jqgrid/js/jquery.jqGrid.min.js"></script>
-
     <style>
         .float-e-margins{
             padding:0 10%;
@@ -89,6 +85,9 @@
         </div>
     </div>
 </div>
+<!-- jqGrid -->
+<script src="../../plugin/jqgrid/js/grid.locale-cn.js"></script>
+<script src="../../plugin/jqgrid/js/jquery.jqGrid.min.js"></script>
 <!-- Page-Level Scripts -->
 <script>
     $(document).ready(function () {
@@ -175,12 +174,71 @@
             height: 200,
             reloadAfterSubmit: true
         });
-
         // Add responsive to jqGrid
         $(window).bind('resize', function () {
             var width = $('.jqGrid_wrapper').width();
             $('#table_list_1').setGridWidth(width);
             $('#table_list_2').setGridWidth(width);
+        });
+//        增删改操作设置统一变量
+        var table_list = $("#table_list_2");
+//        新增
+        $("#add").click(function(){
+            layer.open({
+                type: 2,
+                title: 'layer mobile页',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['35%', '50%'],
+                content: '../operation/add.html', //iframe的url
+                btn: ['确定', '关闭'],
+                yes:function(){
+                    $.ajax({
+                        url:url,
+                        date:date,
+                        async:false,
+                        success:function(){
+
+                        }
+                    })
+                },
+                cancel:function(){
+                    layer.closeAll();
+                }
+            });
+        });
+//        修改
+        $("#change").click(function(){
+            var selectId = table_list.jqGrid("getGridParam","selrow");
+//            alert(selectId);
+//            var table_list = $("#table_list_2");
+//            var selectId = table_list.jqGrid("getGridParam","selrow");
+            if(selectId != "" && selectId != null) {
+                alert("弹出修改页面");
+            }else{
+                layer.alert('请选中一条数据！', {
+                    icon: 3,
+                    skin: 'layer-ext-moon'
+                })
+            }
+        });
+//        删除
+        $("#delete").click(function(){
+            var selectId = table_list.jqGrid("getGridParam","selrow");
+//            alert(selectId);
+            if(selectId != "" && selectId != null) {
+                layer.confirm('确认删除？', {
+                    btn: ['确认','取消'] //按钮
+                }, function(){
+                    layer.msg('删除成功', {icon: 1});
+                }, function(){});
+            }else{
+                layer.alert('请选中一条数据！', {
+                    icon: 3,
+                    skin: 'layer-ext-moon'
+                })
+            }
+
         });
     });
 </script>
