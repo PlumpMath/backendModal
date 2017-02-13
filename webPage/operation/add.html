@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="../../plugin/fontAwesome/css/font-awesome.min.css">
     <!--jQuery-->
     <script src="../../js/jquery/jquery-2.0.2.min.js"></script>
+    <!--jquery validator-->
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
     <!--3.1的版本不支持contab-->
     <!--<script src="js/jquery/jquery-3.1.1.js"></script>-->
     <!--bootstrap js-->
@@ -34,18 +37,37 @@
     <form id="addForm">
         <table>
             <tr>
-                <td><span>名字</span><input type="text"></td>
-                <td><span>类型</span><input type="text"></td>
+                <td><label for="firstname">名字</label><input id="firstname" name="firstname" type="text"></td>
+                <td><label for="lastname">姓氏</label><input id="lastname" name="lastname" type="text"></td>
             </tr>
-            <tr>
-                <td><span>名字</span><input type="text"></td>
-                <td><span>类型</span><input type="text"></td>
-            </tr>
-            <tr>
-                <td><span>名字</span><input type="text"></td>
-                <td><span>类型</span><input type="text"></td>
-            </tr>
+            <p>
+                <!--<input class="submit" type="submit" value="Login">-->
+                <span id="submitBtn" onclick="submitFun()">提交</span>
+            </p>
         </table>
     </form>
+    <script>
+        $.validator.setDefaults({
+            submitHandler: function() {
+                alert("提交事件!");
+            }
+        });
+        $().ready(function() {
+// 在键盘按下并释放及提交后验证提交表单
+            $("#addForm").validate({
+                rules: {
+                    firstname: "required",
+                    lastname: "required"
+                },
+                messages: {
+                    firstname: "请输入您的名字",
+                    lastname: "请输入您的姓氏"
+                }
+            });
+        });
+        function submitFun() {
+            $("#addForm").submit();
+        }
+    </script>
 </body>
 </html>

@@ -22,12 +22,6 @@
     <script src="../../plugin/layer/layer.js"></script>
     <!--bootstrap js-->
     <script src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
-    <style>
-        .float-e-margins{
-            padding:0 10%;
-            margin:2% 10%;
-        }
-    </style>
     <script src="../../js/jquery/jquery-2.0.2.min.js"></script>
 </head>
 <body>
@@ -193,14 +187,24 @@
                 content: '../operation/add.html', //iframe的url
                 btn: ['确定', '关闭'],
                 yes:function(){
-                    $.ajax({
-                        url:url,
-                        date:date,
-                        async:false,
-                        success:function(){
-
-                        }
-                    })
+//                    var iframeWin = document.getElementsByTagName("iframe");
+                    var iframeWin = $("iframe");
+                    var submitBtn = iframeWin.find("#submitBtn");
+                    alert(submitBtn.text());
+                    submitBtn.click();
+                  /*  var submitBtn = $(this).contents().find("#submitBtn");
+                    alert(submitBtn);*/
+//                     form = $("#addForm");
+//                    alert(btn);
+//                    form.submit();
+//                    $.ajax({
+//                        url:url,
+//                        date:date,
+//                        async:false,
+//                        success:function(){
+//
+//                        }
+//                    })
                 },
                 cancel:function(){
                     layer.closeAll();
