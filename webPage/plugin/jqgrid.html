@@ -187,11 +187,13 @@
                 content: '../operation/add.html', //iframe的url
                 btn: ['确定', '关闭'],
                 yes:function(){
+                    var iframe1 = window.frames[0];
+                    iframe1.document.getElementById("submitBtn").click();
 //                    var iframeWin = document.getElementsByTagName("iframe");
-                    var iframeWin = $("iframe");
-                    var submitBtn = iframeWin.find("#submitBtn");
-                    alert(submitBtn.text());
-                    submitBtn.click();
+//                    var iframeWin = $("iframe");
+//                    var submitBtn = iframeWin.find("#submitBtn");
+//                    alert(submitBtn.text());
+//                    submitBtn.click();
                   /*  var submitBtn = $(this).contents().find("#submitBtn");
                     alert(submitBtn);*/
 //                     form = $("#addForm");
@@ -242,7 +244,6 @@
                     skin: 'layer-ext-moon'
                 })
             }
-
         });
     });
 </script>
