@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Font Awesome</title>
+    <!--bootstrap样式-->
+    <link rel="stylesheet" href="../../plugin/bootstrap/css/bootstrap.min.css">
+    <!--animate-->
+    <link rel="stylesheet" href="../../css/common/animate.css">
+    <!--common style-->
+    <link rel="stylesheet" href="../../css/common/style.css">
+    <!--font-awesome-->
+    <link rel="stylesheet" href="../../plugin/fontAwesome/css/font-awesome.min.css">
+    <!--jQuery-->
+    <script src="../../js/jquery/jquery-2.0.2.min.js"></script>
+    <!--3.1的版本不支持contab-->
+    <!--<script src="js/jquery/jquery-3.1.1.js"></script>-->
+    <!--bootstrap js-->
+    <script src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        .float-e-margins{
+            padding:0 10%;
+            margin:2% 10%;
+        }
+        td{
+            padding:10px 0;
+        }
+        td input{
+            border:1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-10">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>form validator----plugin</h5>
+            </div>
+            <div class="ibox-content">
+                <a target=_blank href="http://www.runoob.com/jquery/jquery-plugin-validate.html">1.jquery validator</a>
+            </div>
+            <div class="ibox-content">
+                <a target=_blank href="http://www.runoob.com/angularjs/angularjs-validation.html">2.angular validator</a>
+            </div>
+            <div class="ibox-content">
+                <a target=_blank href="https://validator.niceue.com/docs/getting-started.html">3.nice validator</a>
+            </div>
+            <div class="ibox-content">
+                <a target=_blank href="https://www.oschina.net/news/28082/10-javascript-form-validate">4.top 10 validator</a>
+            </div>
+            <br>
+            <div class="ibox-title">
+                <h5>自写表单验证</h5>
+            </div>
+            <div class="ibox-content">
+                <table>
+                    <tr>
+                        <td><span>名字</span></td>
+                        <td><input class="validator" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><span>名字</span></td>
+                        <td><input class="validator" type="text"></td>
+                    </tr>
+                </table>
+                <p>我个人觉得纯js的插件相对拓展性比较高，但是由于是自己写的，可能兼容方面考虑的不是很好，但真的很简便，以后需要验证表单的时候，只需要加class属性:validator就可以了。但是我这里做了限制，就是创建出的元素为表单td元素，判断也是根据tr来判断的，所以，尽量依照我的格式来写。表单写在table里面是因为格式整齐些。</p>
+                <p>
+                    在写这个插件的过程中，我觉得，最大的收获，就是对闭包的了解。详情会写在我的个人博客里。
+                </p>
+                <p>1.可以访问作用域之外的参数。</p>
+                <p>2.匿名函数无法得到参数</p>
+                <p>3.内存的浪费与否？</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+window.onload = function(){
+//    $(".tdTip").css("display","none");
+    //    js封装为jq获取id方式
+    var $ = function(type,select){
+        if(type=='#'){
+            return document.getElementById(select);
+        }else if(type=='.'){
+            return document.getElementsByClassName(select);
+        }else if(type==''){
+            return document.getElementsByTagName(select);
+        }
+    }
+
+    //    提示信息
+    var tip = "此项为必填项";
+    //    获取td标签数组
+    var tdTag = $(".","tdTip");
+    //    获取当前页面有多少个tr标签，就创建多少个tip
+    var trHtml = $("","tr");
+    for(var i= 0;i<trHtml.length;i++){
+        //    创建一个td元素，用来存放提示信息
+        var tdCreate = document.createElement("td");
+        //    给td元素一个class,以方便全局控制样式
+        tdCreate.setAttribute("class","tdTip fa fa-exclamation-circle");
+        trHtml[i].appendChild(tdCreate);
+        tdCreate.innerHTML = tip;
+//        默认初始化为透明
+        tdTag[i].style.color="transparent";
+    }
+    var inputTag = $(".","validator");
+    for(var i = 0;i<inputTag.length;i++){
+        (function(i){
+            inputTag[i].onblur = function(){
+                if(inputTag[i].value==''){
+                    tdTag[i].style.color="#d8486f";
+
+                }else{
+                    tdTag[i].style.color='transparent';
+                }
+            }
+        })(i);
+    }
+}
+</script>
+</body>
+</html>
