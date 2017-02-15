@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Calander</title>
     <!--bootstrap样式-->
     <link rel="stylesheet" href="../../plugin/bootstrap/css/bootstrap.min.css">
@@ -11,12 +12,16 @@
     <link rel="stylesheet" href="../../css/common/style.css">
     <!--font-awesome-->
     <link rel="stylesheet" href="../../plugin/fontAwesome/css/font-awesome.min.css">
+    <!--layui-->
+    <link rel="stylesheet" href="../../plugin/layui/css/layui.css">
     <!--jQuery-->
     <script src="../../js/jquery/jquery-2.0.2.min.js"></script>
     <!--3.1的版本不支持contab-->
     <!--<script src="js/jquery/jquery-3.1.1.js"></script>-->
     <!--bootstrap js-->
     <script src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
+    <!--layui js-->
+    <script src="../../plugin/layui/layui.js"></script>
     <style>
         .float-e-margins{
             padding:0 10%;
@@ -30,13 +35,31 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>时间选择器</h5>
+                <p class="pull-right" id=currentTime></p>
             </div>
             <div class="ibox-content">
                 <p>1.时间选择器【无需做验证】</p>
+                
                 <p>2.起止时间选择器【需验证】</p>
             </div>
         </div>
     </div>
 </div>
+<script>
+    var showTime = function(){
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var day = date.getDate();
+        var week = date.getDay();
+        var hour = date.getHours();
+        var minutes  = date.getMinutes();
+        var seconds = date.getSeconds();
+        var currentTime = document.getElementById("currentTime");
+        var weekZh = ['天','一','二','三','四','五','六'];
+        currentTime.innerHTML = year+'年'+month+'月'+day+'日'+' 星期'+weekZh[week]+' '+hour+'时'+minutes+'分'+seconds+'秒';
+    }
+    setInterval(function(){showTime()},1000);
+</script>
 </body>
 </html>
