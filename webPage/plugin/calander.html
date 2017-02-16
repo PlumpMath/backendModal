@@ -27,6 +27,10 @@
             padding:0 10%;
             margin:2% 10%;
         }
+        /*label样式*/
+        .layui-form-label{
+            padding:0 15px !important;
+        }
     </style>
 </head>
 <body>
@@ -38,9 +42,43 @@
                 <p class="pull-right" id=currentTime></p>
             </div>
             <div class="ibox-content">
+                <a href="http://www.layui.com/" target=_blank>layui官网</a>
+                <br/>
+                <br/>
                 <p>1.时间选择器【无需做验证】</p>
-                
-                <p>2.起止时间选择器【需验证】</p>
+                <br>
+                <div class="layui-inline">
+                    <input class="layui-input layer-date laydate-icon" placeholder="自定义日期格式" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+                </div>
+                <br/>
+                <br/>
+                <p>2.节日日历</p>
+                <br>
+                <div class="layui-inline">
+                    <input class="layui-input layer-date laydate-icon" placeholder="开启节日" onclick="layui.laydate({elem: this, festival: true})">
+                </div>
+                <br/>
+                <br/>
+                <p>3.时间选择器【只能选择昨天到明天】</p>
+                <br>
+                <div class="layui-inline">
+                    <input class="layui-input layer-date laydate-icon" placeholder="只能选昨天到明天" onclick="layui.laydate({elem: this, min: laydate.now(-1), max: laydate.now(+1)})">
+                </div>
+                <br/>
+                <br/>
+                <p>4.起止时间选择器【需验证】</p>
+                <br>
+                <div class="layui-form-pane" style="margin-top: 15px;">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">范围选择</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input layer-date laydate-icon" placeholder="开始日" id="LAY_demorange_s">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input class="layui-input layer-date laydate-icon" placeholder="截止日" id="LAY_demorange_e">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -60,6 +98,43 @@
         currentTime.innerHTML = year+'年'+month+'月'+day+'日'+' 星期'+weekZh[week]+' '+hour+'时'+minutes+'分'+seconds+'秒';
     }
     setInterval(function(){showTime()},1000);
+</script>
+<script>
+    layui.use('laydate', function(){
+        //如果只是使用时间选择器，就只要这一行代码就足够了，实例化对象
+        var laydate = layui.laydate;
+
+//        时间有所起止
+        var start = {
+            min: laydate.now(),
+//            min:'1970-01-01 00:00:00',
+            max: '2099-06-16 23:59:59',
+            istoday: true,
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+
+        var end = {
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istoday: false,
+            choose: function(datas){
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+
+        document.getElementById('LAY_demorange_s').onclick = function(){
+            start.elem = this;
+            laydate(start);
+        }
+        document.getElementById('LAY_demorange_e').onclick = function(){
+            end.elem = this
+            laydate(end);
+        }
+
+    });
 </script>
 </body>
 </html>
