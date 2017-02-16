@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>treeview</title>
+    <!--bootstrap样式-->
+    <link rel="stylesheet" href="../../plugin/bootstrap/css/bootstrap.min.css">
+    <!--animate-->
+    <link rel="stylesheet" href="../../css/common/animate.css">
+    <!--common style-->
+    <link rel="stylesheet" href="../../css/common/style.css">
+    <!--font-awesome-->
+    <link rel="stylesheet" href="../../plugin/fontAwesome/css/font-awesome.min.css">
+    <!--jQuery-->
+    <script src="../../js/jquery/jquery-2.0.2.min.js"></script>
+    <!--3.1的版本不支持contab-->
+    <!--<script src="js/jquery/jquery-3.1.1.js"></script>-->
+    <!--bootstrap js-->
+    <script src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../plugin/bootstrap/js/bootstrap-treeview.js"></script>
+    <style>
+        .float-e-margins{
+            padding:0 10%;
+            margin:2% 10%;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-10">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>treeview[bootstrap]</h5>
+            </div>
+            <div class="ibox-content">
+                <div id="tree_bootstrap"></div>
+            </div>
+            <div class="ibox-title">
+                <h5>treeview[easyUI]</h5>
+            </div>
+            <div class="ibox-content">
+                <div id="tree_easyUI"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+//    bootstrap treeview下的数据
+    var defaultData = [
+        {
+            text: 'Parent 1',
+            href: '#parent1',
+            tags: ['4'],
+            nodes: [
+                {
+                    text: 'Child 1',
+                    href: '#child1',
+                    tags: ['2'],
+                    nodes: [
+                        {
+                            text: 'Grandchild 1',
+                            href: '#grandchild1',
+                            tags: ['0']
+                        },
+                        {
+                            text: 'Grandchild 2',
+                            href: '#grandchild2',
+                            tags: ['0']
+                        }
+                    ]
+                },
+                {
+                    text: 'Child 2',
+                    href: '#child2',
+                    tags: ['0']
+                }
+            ]
+        },
+        {
+            text: 'Parent 2',
+            href: '#parent2',
+            tags: ['0']
+        },
+        {
+            text: 'Parent 3',
+            href: '#parent3',
+            tags: ['0']
+        },
+        {
+            text: 'Parent 4',
+            href: '#parent4',
+            tags: ['0']
+        },
+        {
+            text: 'Parent 5',
+            href: '#parent5'  ,
+            tags: ['0']
+        }
+    ];
+    $('#tree_bootstrap').treeview({
+        expandIcon: "glyphicon glyphicon-stop",
+        collapseIcon: "glyphicon glyphicon-unchecked",
+        nodeIcon: "glyphicon glyphicon-user",
+//        color: "yellow",
+//        backColor: "purple",
+//        onhoverColor: "orange",
+//        borderColor: "red",
+        showBorder: false,
+//        showTags: true,
+        highlightSelected: true,
+        onNodeSelected:function(event,node){
+            alert(node.text);
+        },
+        enableLinks:true,
+//        selectedColor: "yellow",
+//        selectedBackColor: "darkorange",
+        data: defaultData
+    });
+
+</script>
+</body>
+</html>
