@@ -12,13 +12,18 @@
     <link rel="stylesheet" href="../../css/common/style.css">
     <!--font-awesome-->
     <link rel="stylesheet" href="../../plugin/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../plugin/easyUI/themes/default/easyui.css">
+    <link rel="stylesheet" href="../../plugin/easyUI/themes/icon.css">
     <!--jQuery-->
     <script src="../../js/jquery/jquery-2.0.2.min.js"></script>
     <!--3.1的版本不支持contab-->
     <!--<script src="js/jquery/jquery-3.1.1.js"></script>-->
     <!--bootstrap js-->
     <script src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
+    <!--bootstrap treeview-->
     <script src="../../plugin/bootstrap/js/bootstrap-treeview.js"></script>
+    <!--easyui tree-->
+    <script src="../../plugin/easyUI/jquery.easyui.min.js"></script>
     <style>
         .float-e-margins{
             padding:0 10%;
@@ -31,16 +36,52 @@
     <div class="col-sm-10">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>treeview[bootstrap]</h5>
+                <h5>1.treeview[bootstrap]</h5>
             </div>
             <div class="ibox-content">
                 <div id="tree_bootstrap"></div>
             </div>
             <div class="ibox-title">
-                <h5>treeview[easyUI]</h5>
+                <h5>2.treeview[easyUI]</h5>
             </div>
             <div class="ibox-content">
-                <div id="tree_easyUI"></div>
+                <div id="tree_easyUI">
+                    <div class="easyui-panel" style="padding:5px">
+                        <ul class="easyui-tree">
+                            <li>
+                                <span>My Documents</span>
+                                <ul>
+                                    <li data-options="state:'closed'">
+                                        <span>Photos</span>
+                                        <ul>
+                                            <li>
+                                                <span>Friend</span>
+                                            </li>
+                                            <li>
+                                                <span>Wife</span>
+                                            </li>
+                                            <li>
+                                                <span>Company</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span>Program Files</span>
+                                        <ul>
+                                            <li>Intel</li>
+                                            <li>Java</li>
+                                            <li>Microsoft Office</li>
+                                            <li>Games</li>
+                                        </ul>
+                                    </li>
+                                    <li>index.html</li>
+                                    <li>about.html</li>
+                                    <li>welcome.html</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -117,7 +158,6 @@
 //        selectedBackColor: "darkorange",
         data: defaultData
     });
-
 </script>
 </body>
 </html>

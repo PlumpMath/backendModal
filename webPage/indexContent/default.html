@@ -2,10 +2,264 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>defaultIndex</title>
+    <title class="title">defaultIndex</title>
+    <!--bootstrap样式-->
+    <link rel="stylesheet" href="../../plugin/bootstrap/css/bootstrap.min.css">
+    <!--font-awesome-->
+    <link rel="stylesheet" href="../../plugin/fontAwesome/css/font-awesome.min.css">
+    <!--animate-->
+    <link rel="stylesheet" href="../../css/common/animate.css">
+    <!--common style-->
+    <link rel="stylesheet" href="../../css/common/style.css">
+    <!--jQuery-->
+    <script src="../../js/jquery/jquery-2.0.2.min.js"></script>
+    <style media=print>
+        #print{
+            display: none;
+        }
+        .float-e-margins{
+            padding:0;
+            margin:0;
+        }
+        .col-sm-10{
+            width:100%;
+        }
+        #experienceDiv{
+            width: 100%;
+        }
+        #experienceDiv table td{
+            padding: 0 10px;
+            word-break:break-all
+        }
+        #experienceDiv table td.company{
+            width: 15%;
+        }
+        #experienceDiv table td.project{
+            width: 30%;
+        }
+        #experienceDiv table td.work{
+            width: 30%;
+        }
+        #experienceDiv table td.time{
+            width: 25%;
+        }
+        #experienceDiv table td.type{
+            display: none;
+        }
+    </style>
+    <style>
+        .float-e-margins{
+            padding:0 10%;
+            margin:2% 10%;
+        }
+        table thead{
+            text-align:center
+        }
+        table td{
+            padding:5px 10px;
+        }
+        table td i{
+            text-align: left;
+            width: 25px;
+        }
+
+    </style>
 </head>
 <body>
-默认首页页面
-<a href="#">信息信息</a>
+<div class="row">
+    <div class="col-sm-10">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>个人信息</h5>
+                <div class="pull-right">
+                    <a class="btn btn-default" id="print">打印该简历</a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <table>
+                    <tr>
+                        <td><i class="fa fa-user-circle"></i>姓名:谢长青</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-female"></i>性别:女</td>
+                    </tr>
+                    <tr>
+                        <td id="age"><i class="fa fa-calendar"></i></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-briefcase"></i>学历:本科</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-id-card-o"></i>毕业院校:电子科技大学成都学院</td>
+                    </tr>
+                    <tr>
+                        <td id="workExperence"><i class="fa fa-line-chart"></i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>友情链接：</h5>
+                            <i class="fa fa-github"></i><a target=_blank href="https://github.com/xiechangqing/">github</a>
+                            <i class="fa fa-fa-spinner"></i><a target=_blank href="http://www.xiechangqing.com/">个人主页</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+            <div class="ibox-title">
+                <h5>工作经验</h5>
+            </div>
+            <div class="ibox-content" id="experienceDiv">
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="company">所在公司</td>
+                            <td class="project">参与项目</td>
+                            <td class="type">工作岗位</td>
+                            <td class="work">担任职责</td>
+                            <td class="time">工作时间</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="company">成都云智无忧科技有限公司</td>
+                            <td  class="project">
+                                <p><a target="_blank" href="http://120.196.115.230:6900/yjweb/system/user/main">余江能耗监测系统</a></p>
+                                <p><a target="_blank" href="http://xiechangqing.com/jx/">精讯智慧平台</a></p>
+                                <p><a target="_blank" href="http://120.196.115.230:6900/cicservice/">cic指令系统</a></p>
+                            </td>
+                            <td class="type">web前端</td>
+                            <td class="work">
+                                <p>负责搭建项目前端框架，完成前端jsp界面</p>
+                                <p>各类图表展示。弹框，各类数据ajax请求接口</p>
+                                <p>各类插件调用：echart,treeview,gqgrid等</p>
+                                <p>所用主要框架：jQuery，bootstrap</p>
+                            </td>
+                            <td class="time">2016.10-至今</td>
+                        </tr>
+                        <tr>
+                            <td  class="company">成都远控科技有限公司</td>
+                            <td  class="project">
+                                <p><a target="_blank" href="http://congdaxinxi.com/">成都聪达信息科技有限公司官网</a></p>
+                                <p><a target="_blank" href="http://www.yuankong.net/">成都远控科技有限公司官网</a></p>
+                                <p><a target="_blank" href="http://yunlingip.com/">云领知识产权平台</a></p>
+                            </td>
+                            <td class="type">web前端</td>
+                            <td class="work">
+                                <p>各类门户网站独立发开并完成</p>
+                                <p>网站动态效果展示，界面友好化，后期维护</p>
+                                <p>所用主要框架：jQuery,threeJs等</p>
+                            </td>
+                            <td class="time">2015.4-2016-9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <br>
+            <div class="ibox-title">
+                <h5>职业技能</h5>
+            </div>
+            <div class="ibox-content">
+                <table>
+                    <tr>
+                        <td>
+                            <p><i class="fa fa-battery-three-quarters"></i>熟练使用HTML5、CSS3、JavaScript</p>
+                            <p><i class="fa fa-battery-three-quarters"></i>可使用原生js写一些简单的小插件，如：表单验证，时钟，下拉树等，详情参见我的github账号：<a href="https://github.com/xiechangqing/js_plugin">https://github.com/xiechangqing</a></p>
+                            <p><i class="fa fa-battery-three-quarters"></i>熟练使用各类框架，如：jQuery,bootstrap</p>
+                            <p><i class="fa fa-battery-three-quarters"></i>熟练使用各类插件，如：echart,easyUI,validator等等</p>
+                            <p><i class="fa fa-battery-three-quarters"></i>熟悉ajax请求，实现数据交互接口供后台调用</p>
+                            <p><i class="fa fa-battery-three-quarters"></i>熟悉jsp,并且可以根据后台已搭建框架在controller层实现数据增删改操作</p>
+                            <p><i class="fa fa-battery-three-quarters"></i>对Java有一定的了解</p>
+                            <p><i class="fa fa-battery-three-quarters"></i>了解主流浏览器的兼容问题，能使用firebug来进行网页调试</p>
+                            <p><i class="fa fa-battery-three-quarters"></i>熟练使用git,svn代码管理工具</p>
+                            <p><i class="fa fa-battery-half"></i>熟悉angularJs 1</p>
+                            <p><i class="fa fa-battery-half"></i>熟悉photoshop，可以进行简单的切图等操作</p>
+                            <p><i class="fa fa-battery-quarter"></i>了解react</p>
+                            <p><i class="fa fa-battery-quarter"></i>了解nodeJs</p>
+                            <h5>语言</h5>
+                            <p><i class="fa fa-star"></i>英语四级</p>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+            <div class="ibox-title">
+                <h5>个人评价</h5>
+            </div>
+            <div class="ibox-content">
+                <table>
+                    <tr>
+                        <td>
+                            <p>做事认真负责，学习能力强</p>
+                            <p>善于沟通，思维较具逻辑性，思路清晰，乐于积极解决问题</p>
+                            <p>爱钻研，有强烈的上进心</p>
+                            <p>有较强的团队合作精神</p>
+                            <p>性格开朗活泼</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+            <div class="ibox-title">
+                <h5>联系方式</h5>
+            </div>
+            <div class="ibox-content">
+                <table>
+                    <tr>
+                        <td>
+                            <p><i class="fa fa-phone"></i>15708432860</p>
+                            <p><i class="fa fa-qq"></i>
+                                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=576535019&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:576535019:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+                            </p>
+                            <p><i class="fa fa-wechat"></i><a style="cursor:pointer" id="wechat">点我查看二维码</a></p>
+                            <p>
+                                <img src="../../image/connect/wechat.png" style="display: none" id="wechatImg" alt="wechat">
+                            </p>
+                            <p><i class="fa fa-envelope-o"></i><a href="mailto:576535019@qq.com">点击发送邮件给我</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+//    页面时间处理
+    var ageTag = $("#age");
+    var experenceTag = $("#workExperence");
+    var birth = 1994;
+    var workTime = 2015;
+    var date = new Date();
+    var year = date.getFullYear();
+    var age = year-birth;
+    var workExperence = year-workTime;
+    ageTag.append('年龄:'+age);
+    experenceTag.append('工作年限:'+workExperence+'年');
+//    微信图片展示与隐藏
+    var wechat = $("#wechat");
+    var flag = true;
+    wechat.click(
+        function(){
+            if(flag==true){
+                $("#wechatImg").show();
+                $("#wechat").text("点我隐藏");
+                flag = false;
+            }else if(flag==false){
+                $("#wechatImg").hide();
+                $("#wechat").text("点我查看二维码");
+                flag=true
+            }
+
+        }
+    );
+//    打印功能
+    $("#print").click(function(){
+        window.print();
+    });
+</script>
 </body>
 </html>
