@@ -14,7 +14,7 @@
     <!--jQuery-->
     <script src="../../js/jquery/jquery-2.0.2.min.js"></script>
     <style media=print>
-        #print{
+        #print,#download,#connect{
             display: none;
         }
         .float-e-margins{
@@ -31,21 +31,24 @@
             padding: 0 10px;
             word-break:break-all
         }
-        #experienceDiv table td.company{
+        .name{
             width: 15%;
         }
-        #experienceDiv table td.project{
-            width: 30%;
+        #phone{
+            display: block !important;
         }
-        #experienceDiv table td.work{
-            width: 30%;
-        }
-        #experienceDiv table td.time{
-            width: 25%;
-        }
-        #experienceDiv table td.type{
-            display: none;
-        }
+        /*#experienceDiv table td.company{*/
+            /*width: 15%;*/
+        /*}*/
+        /*#experienceDiv table td.project{*/
+            /*width: 30%;*/
+        /*}*/
+        /*#experienceDiv table td.work{*/
+            /*width: 30%;*/
+        /*}*/
+        /*#experienceDiv table td.time{*/
+            /*width: 25%;*/
+        /*}*/
     </style>
     <style>
         .float-e-margins{
@@ -53,7 +56,7 @@
             margin:2% 10%;
         }
         table thead{
-            text-align:center
+            text-align:left
         }
         table td{
             padding:5px 10px;
@@ -62,17 +65,33 @@
             text-align: left;
             width: 25px;
         }
-
+        #experienceDiv table{
+            width: 100%;
+        }
+        #experienceDiv td,.projectEx td{
+            padding:5px 10px;
+            word-break:break-all
+        }
+        #print{
+            margin-right:10px;
+        }
+        .edu{
+            width: 100%;
+        }
+        .projectEx tr td{
+            border:1px solid #ddd;
+        }
     </style>
 </head>
 <body>
 <div class="row">
-    <div class="col-sm-10">
+    <div class="col-sm-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>个人信息</h5>
                 <div class="pull-right">
-                    <a class="btn btn-default" id="print">打印该简历</a>
+                    <a class="btn btn-primary btn-xs" id="download">下载该简历</a>
+                    <a class="btn btn-default btn-xs" id="print">打印该简历</a>
                 </div>
             </div>
             <div class="ibox-content">
@@ -96,10 +115,16 @@
                         <td id="workExperence"><i class="fa fa-line-chart"></i></td>
                     </tr>
                     <tr>
+                        <td><i class="fa fa-map-o"></i>求职方向：web前端开发</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-money"></i>期望月薪：6k</td>
+                    </tr>
+                    <tr>
                         <td>
                             <h5>友情链接：</h5>
                             <i class="fa fa-github"></i><a target=_blank href="https://github.com/xiechangqing/">github</a>
-                            <i class="fa fa-fa-spinner"></i><a target=_blank href="http://www.xiechangqing.com/">个人主页</a>
+                            <i class="fa fa-fa-spinner"></i><a href="http://www.xiechangqing.com/resume">个人主页</a>
                         </td>
                     </tr>
                 </table>
@@ -113,46 +138,151 @@
                 <table>
                     <thead>
                         <tr>
-                            <td class="company">所在公司</td>
-                            <td class="project">参与项目</td>
-                            <td class="type">工作岗位</td>
-                            <td class="work">担任职责</td>
-                            <td class="time">工作时间</td>
+                            <td class="company col-sm-3">所在公司</td>
+                            <td class="project col-sm-3">参与项目</td>
+                            <!--<td class="work">担任职责</td>-->
+                            <td class="time col-sm-3">工作时间</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="company">成都云智无忧科技有限公司</td>
-                            <td  class="project">
+                            <td class="company col-sm-3">成都云智无忧科技有限公司</td>
+                            <td  class="project col-sm-3">
                                 <p><a target="_blank" href="http://120.196.115.230:6900/yjweb/system/user/main">余江能耗监测系统</a></p>
                                 <p><a target="_blank" href="http://xiechangqing.com/jx/">精讯智慧平台</a></p>
                                 <p><a target="_blank" href="http://120.196.115.230:6900/cicservice/">cic指令系统</a></p>
                             </td>
-                            <td class="type">web前端</td>
-                            <td class="work">
-                                <p>负责搭建项目前端框架，完成前端jsp界面</p>
-                                <p>各类图表展示。弹框，各类数据ajax请求接口</p>
-                                <p>各类插件调用：echart,treeview,gqgrid等</p>
-                                <p>所用主要框架：jQuery，bootstrap</p>
-                            </td>
-                            <td class="time">2016.10-至今</td>
+                            <td class="time col-sm-3">2016.10-至今</td>
                         </tr>
                         <tr>
-                            <td  class="company">成都远控科技有限公司</td>
-                            <td  class="project">
+                            <td  class="company col-sm-3">成都远控科技有限公司</td>
+                            <td  class="project col-sm-3">
                                 <p><a target="_blank" href="http://congdaxinxi.com/">成都聪达信息科技有限公司官网</a></p>
+                                <p><a target="_blank" href="http://139.196.169.187:8080/lhk/">联航科智慧城市管网</a></p>
                                 <p><a target="_blank" href="http://www.yuankong.net/">成都远控科技有限公司官网</a></p>
                                 <p><a target="_blank" href="http://yunlingip.com/">云领知识产权平台</a></p>
                             </td>
-                            <td class="type">web前端</td>
-                            <td class="work">
-                                <p>各类门户网站独立发开并完成</p>
-                                <p>网站动态效果展示，界面友好化，后期维护</p>
-                                <p>所用主要框架：jQuery,threeJs等</p>
-                            </td>
-                            <td class="time">2015.4-2016-9</td>
+                            <td class="time col-sm-3">2015.4-2016.9</td>
                         </tr>
                     </tbody>
+                </table>
+            </div>
+            <br>
+            <br>
+            <!--edu-->
+            <div class="ibox-title">
+                <h5>教育经历</h5>
+            </div>
+            <div class="ibox-content">
+                <table class="edu">
+                    <tr>
+                        <td class="col-sm-4">毕业院校</td>
+                        <td class="col-sm-4">专业</td>
+                        <td class="col-sm-4">时间</td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-4">电子科技大学成都学院</td>
+                        <td class="col-sm-4">计算机科学与技术</td>
+                        <td class="col-sm-4">2012.9-2016.6</td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+            <!--project-->
+            <div class="ibox-title">
+                <h5>项目经验</h5>
+            </div>
+            <div class="ibox-content">
+                <table class="projectEx">
+                    <tr>
+                        <td class="col-sm-3 name">项目名称(附链接)</td>
+                        <td class="col-sm-6">项目技术与个人担任职责</td>
+                        <td class="col-sm-3">担任职责</td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-3 name"><a target="_blank" href="http://120.196.115.230:6900/yjweb/system/user/main">余江经济大厦能耗监测系统</a> </td>
+                        <td class="col-sm-6">
+                            <p>负责搭建项目前端框架，完成前端jsp页面。2.数据ajax请求接口</p>
+                            <p>1. 该项目为能耗监测系统</p>
+                            <p>2. 项目使用了各类插件实现其功能。</p>
+                            <p>3.  各类插件调用：echart,treeview,gqgrid等</p>
+                            <p>4. 所用主要框架：jQuery，bootstrap</p>
+                        </td>
+                        <td class="col-sm-3">
+                            前端开发
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-3 name"><a target="_blank" href="http://xiechangqing.com/jx/">精讯管家智慧平台</a> </td>
+                        <td class="col-sm-6">
+                            <p>负责搭建项目前端框架，完成前端jsp页面。2.数据ajax请求接口</p>
+                            <p>1. 该项目为智慧城市管理平台</p>
+                            <p>2. 具体内容参见参考链接</p>
+                            <p>3. 目前只做了一个模块【智慧酒店】</p>
+                        </td>
+                        <td class="col-sm-3">
+                            前端开发
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-3 name"><a target="_blank" href="http://120.196.115.230:6900/cicservice/">cic指令系统</a> </td>
+                        <td class="col-sm-6">
+                            <p>负责搭建项目前端框架，完成前端jsp页面。2.数据ajax请求接口</p>
+                            <p>1. 该系统为指令系统管理平台</p>
+                            <p>2. 最主要的功能为数据以图标的形式展示，实现增删改操作</p>
+                        </td>
+                        <td class="col-sm-3">
+                            前端开发
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-3 name"><a target="_blank" href="http://congdaxinxi.com/">成都聪达信息科技有限公司网页</a> </td>
+                        <td class="col-sm-6">
+                            <p>根据设计图，独立完成聪达信息公司的所有前端网页</p>
+                            <p>该网站为聪达信息公司门户网站。</p>
+                            <p>1. 网站的亮点如下：</p>
+                            <p>1）公司首页采用three.js来实现webGL的动画效果，使网页生动</p>
+                            <p>2）网站中包含手风琴特效，轮播特效，分类特效，百度地图API调用等。</p>
+                            <p>3）网站为中英文双语言。</p>
+                        </td>
+                        <td class="col-sm-3">
+                            前端开发
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-3 name"><a target="_blank" href="http://139.196.169.187:8080/lhk/">联航科智慧城市网页</a> </td>
+                        <td class="col-sm-6">
+                            <p>根据设计图，独立完成联航科公司的前端网页，修改web后台页面</p>
+                            <p>该网站为联航科公司门户网站。</p>
+                            <p>1. 网站分为前后台。我负责网站的所有前端页面，以及所有web后台页面（即修改jsp页面）。</p>
+                            <p>网站的亮点如下：</p>
+                            <p>1）公司首页banner为时间条倒计时；</p>
+                            <p>2）公司首页六大模块部分，使用css3动画增强交互感。</p>
+                            <p>3）功能模块的网页，使用jQuery实现多级嵌套。</p>
+                            <p>4）产品模块的网页，使用jQuery实现二级联动。</p>
+                            <p>5）为保证头部banner的图像不失真，采用media query来实现图片的自适应</p>
+                        </td>
+                        <td class="col-sm-3 name">
+                            前端开发
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-3 name"><a target="_blank" href="http://yunlingip.com/">广州云领知识产权网页 </a> </td>
+                        <td class="col-sm-6">
+                           <p>根据设计图，独立完成广州云领公司的所有前端网页</p>
+                           <p>该网站为广州云领公司门户网站。</p>
+                           <p>网站的亮点如下：</p>
+                           <p>1）做了百度搜索引擎SEO；</p>
+                           <p>2）调用qq在线交谈API；</p>
+                           <p>3）成功案例页面，使用css3增添网站动态效果；</p>
+                           <p>4）买卖页面使用jQuery实现二级联动；</p>
+                           <p>5）为保证头部banner的图像不失真，采用media query来实现图片的自适应</p>
+                        </td>
+                        <td class="col-sm-3">
+                            前端开发
+                        </td>
+                    </tr>
                 </table>
             </div>
             <br>
@@ -161,28 +291,21 @@
                 <h5>职业技能</h5>
             </div>
             <div class="ibox-content">
-                <table>
-                    <tr>
-                        <td>
-                            <p><i class="fa fa-battery-three-quarters"></i>熟练使用HTML5、CSS3、JavaScript</p>
-                            <p><i class="fa fa-battery-three-quarters"></i>可使用原生js写一些简单的小插件，如：表单验证，时钟，下拉树等，详情参见我的github账号：<a href="https://github.com/xiechangqing/js_plugin">https://github.com/xiechangqing</a></p>
-                            <p><i class="fa fa-battery-three-quarters"></i>熟练使用各类框架，如：jQuery,bootstrap</p>
-                            <p><i class="fa fa-battery-three-quarters"></i>熟练使用各类插件，如：echart,easyUI,validator等等</p>
-                            <p><i class="fa fa-battery-three-quarters"></i>熟悉ajax请求，实现数据交互接口供后台调用</p>
-                            <p><i class="fa fa-battery-three-quarters"></i>熟悉jsp,并且可以根据后台已搭建框架在controller层实现数据增删改操作</p>
-                            <p><i class="fa fa-battery-three-quarters"></i>对Java有一定的了解</p>
-                            <p><i class="fa fa-battery-three-quarters"></i>了解主流浏览器的兼容问题，能使用firebug来进行网页调试</p>
-                            <p><i class="fa fa-battery-three-quarters"></i>熟练使用git,svn代码管理工具</p>
-                            <p><i class="fa fa-battery-half"></i>熟悉angularJs 1</p>
-                            <p><i class="fa fa-battery-half"></i>熟悉photoshop，可以进行简单的切图等操作</p>
-                            <p><i class="fa fa-battery-quarter"></i>了解react</p>
-                            <p><i class="fa fa-battery-quarter"></i>了解nodeJs</p>
-                            <h5>语言</h5>
-                            <p><i class="fa fa-star"></i>英语四级</p>
-
-                        </td>
-                    </tr>
-                </table>
+                <p><i class="fa fa-battery-three-quarters"></i>熟练使用HTML5、CSS3、JavaScript</p>
+                <p><i class="fa fa-battery-three-quarters"></i>可使用原生js写一些简单的小插件，如：表单验证，时钟，下拉树等，详情参见我的github账号：<a href="https://github.com/xiechangqing/js_plugin">github</a></p>
+                <p><i class="fa fa-battery-three-quarters"></i>熟练使用各类框架，如：jQuery,bootstrap</p>
+                <p><i class="fa fa-battery-three-quarters"></i>熟练使用各类插件，如：echart,easyUI,validator等等</p>
+                <p><i class="fa fa-battery-three-quarters"></i>熟悉ajax请求，实现数据交互接口供后台调用</p>
+                <p><i class="fa fa-battery-three-quarters"></i>熟悉jsp,并且可以根据后台已搭建框架在controller层实现数据增删改操作</p>
+                <p><i class="fa fa-battery-three-quarters"></i>对Java有一定的了解</p>
+                <p><i class="fa fa-battery-three-quarters"></i>了解主流浏览器的兼容问题，能使用firebug来进行网页调试</p>
+                <p><i class="fa fa-battery-three-quarters"></i>熟练使用git,svn代码管理工具</p>
+                <p><i class="fa fa-battery-half"></i>熟悉angularJs 1</p>
+                <p><i class="fa fa-battery-half"></i>熟悉photoshop，可以进行简单的切图等操作</p>
+                <p><i class="fa fa-battery-quarter"></i>了解react</p>
+                <p><i class="fa fa-battery-quarter"></i>了解nodeJs</p>
+                <h5>语言</h5>
+                <p><i class="fa fa-star"></i>英语四级</p>
             </div>
             <br>
             <br>
@@ -208,7 +331,8 @@
                 <h5>联系方式</h5>
             </div>
             <div class="ibox-content">
-                <table>
+                <p id="phone" style="display: none"><i class="fa fa-phone"></i>15708432860</p>
+                <table id="connect">
                     <tr>
                         <td>
                             <p><i class="fa fa-phone"></i>15708432860</p>
@@ -256,9 +380,13 @@
 
         }
     );
-//    打印功能
+//    打印
     $("#print").click(function(){
         window.print();
+    });
+//    下载
+    $("#download").click(function(){
+        window.open("../../resource/web前端-谢长青.doc");
     });
 </script>
 </body>
